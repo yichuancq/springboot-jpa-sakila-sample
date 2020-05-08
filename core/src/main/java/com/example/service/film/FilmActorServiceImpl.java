@@ -2,7 +2,7 @@ package com.example.service.film;
 
 import com.example.domain.film.FilmActor;
 import com.example.domain.film.key.FilmActorKey;
-import com.example.repostiory.FilmActorRepostiory;
+import com.example.repostiory.FilmActorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.Optional;
 public class FilmActorServiceImpl implements FilmActorService {
 
     @Autowired
-    private FilmActorRepostiory filmActorRepostiory;
+    private FilmActorRepository filmActorRepostiory;
 
     @Override
     public FilmActor findOneById(FilmActorKey filmActorKey) {

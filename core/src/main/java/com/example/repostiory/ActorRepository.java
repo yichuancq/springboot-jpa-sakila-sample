@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * @author yichuan
  */
-public interface ActorRepostiory extends JpaRepository<Actor,Integer> {
+public interface ActorRepository extends JpaRepository<Actor,Integer> {
 }

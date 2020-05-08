@@ -1,7 +1,7 @@
 package com.example.service.film;
 
 import com.example.domain.film.Film;
-import com.example.repostiory.FilmRepostiory;
+import com.example.repostiory.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import java.util.Optional;
 public class FilmServiceImpl implements FilmService {
 
     @Autowired
-    private FilmRepostiory filmRepostiory;
+    private FilmRepository filmRepostiory;
 
 
     @Override

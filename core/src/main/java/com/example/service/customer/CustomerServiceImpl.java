@@ -1,7 +1,7 @@
 package com.example.service.customer;
 
 import com.example.domain.customer.Customer;
-import com.example.repostiory.CustomerRepostiory;
+import com.example.repostiory.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import java.util.Optional;
 public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
-    private CustomerRepostiory customerRepostiory;
+    private CustomerRepository customerRepostiory;
 
     @Override
     public Customer findOneById(Integer customerId) {

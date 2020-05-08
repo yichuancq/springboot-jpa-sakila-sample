@@ -3,5 +3,8 @@ package com.example.repostiory;
 import com.example.domain.film.Film;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface FilmRepostiory extends JpaRepository<Film, Integer> {
+/**
+ * @author yichuan
+ */
+public interface FilmRepository extends JpaRepository<Film, Integer> {
 }

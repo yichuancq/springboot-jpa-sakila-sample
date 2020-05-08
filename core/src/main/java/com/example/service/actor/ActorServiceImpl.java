@@ -1,7 +1,7 @@
 package com.example.service.actor;
 
 import com.example.domain.actor.Actor;
-import com.example.repostiory.ActorRepostiory;
+import com.example.repostiory.ActorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import java.util.Optional;
 public class ActorServiceImpl implements ActorService {
 
     @Autowired
-    private ActorRepostiory actorRepostiory;
+    private ActorRepository actorRepostiory;
 
     /**
      * @param actorId
