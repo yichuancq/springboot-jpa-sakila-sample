@@ -18,9 +18,13 @@ public class FilmText {
     @GeneratedValue
     @Column(name = "film_id")
     private Integer filmId;
-
+    /**
+     *
+     */
     private String title;
-
+    /***
+     *
+     */
     private String description;
 
 }

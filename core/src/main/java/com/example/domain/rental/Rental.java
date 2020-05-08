@@ -45,11 +45,15 @@ public class Rental {
     @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
     @OneToOne
     private Customer customer;
-    //rentalDate
+    /**
+     * 出租日期
+     */
     @Column(name = "rental_date")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private LocalDateTime rentalDate;
-
+    /**
+     * 归还日期
+     */
     @Column(name = "return_date")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private LocalDateTime returnDate;

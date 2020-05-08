@@ -29,7 +29,10 @@ public class RentalTest {
             assert (rental != null);
             //get film
             assert (rental.getCustomer() != null);
+            //
             logger.info("getCustomer first name:{}", rental.getCustomer().getFirstName());
+            //获取客户地址的电话
+            logger.info("getCustomer getPhone:{}", rental.getCustomer().getAddress().getPhone());
             //getStaff
             logger.info("getStaff first name:{}", rental.getStaff().getFirstName());
             //phone
