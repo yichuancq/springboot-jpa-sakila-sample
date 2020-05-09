@@ -94,6 +94,7 @@ public class PaymentServiceImpl implements PaymentService {
             Predicate predicate = cb.conjunction();
             //left join
             Join<Payment, Staff> ruleJoin = root.join("staff", JoinType.LEFT);
+            Join<Payment, Customer> ruleCustomerJoin = root.join("customer", JoinType.LEFT);
             // 通过staff Id过滤
             if (queryPayment != null && !StringUtils.isEmpty(queryPayment.getStaff())
                     && !StringUtils.isEmpty(queryPayment.getStaff().getStaffId())) {
@@ -107,6 +108,21 @@ public class PaymentServiceImpl implements PaymentService {
                 //拼接查询条件
                 predicate = cb.and(predicate, cb.equal(ruleJoin.get("firstName"),
                         queryPayment.getStaff().getFirstName())); //拼接副表中的查询条件
+            }
+
+            //payment->customer->name
+            if (queryPayment != null && !StringUtils.isEmpty(queryPayment.getCustomer())
+                    && !StringUtils.isEmpty(queryPayment.getCustomer().getFirstName())) {
+                //拼接查询条件
+                predicate = cb.and(predicate, cb.equal(ruleCustomerJoin.get("firstName"),
+                        queryPayment.getCustomer().getFirstName())); //拼接副表中的查询条件
+            }
+            //payment->customer->address->phone
+            if (queryPayment != null && !StringUtils.isEmpty(queryPayment.getCustomer())
+                    && !StringUtils.isEmpty(queryPayment.getCustomer().getAddress().getPhone())) {
+                //拼接查询条件
+                predicate = cb.and(predicate, cb.equal(ruleCustomerJoin.get("address").get("phone"),
+                        queryPayment.getCustomer().getAddress().getPhone())); //拼接副表中的查询条件
             }
             query.where(predicate);
             query.distinct(true);
