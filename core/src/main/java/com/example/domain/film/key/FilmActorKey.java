@@ -8,6 +8,10 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
+/**
+ * @author yichuan
+ * FilmActorKey
+ */
 @Getter
 @Setter
 @ToString
@@ -15,12 +19,12 @@ import java.io.Serializable;
 public class FilmActorKey implements Serializable {
 
     /**
-     *
+     * 演员ID
      */
     @Column(name = "actor_id")
     private Integer actorId;
     /**
-     *
+     * 电影Id
      */
     @Column(name = "film_id")
     private Integer filmId;

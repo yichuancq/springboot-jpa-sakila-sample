@@ -9,15 +9,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * @author yichuan
+ * FileText
+ */
 @Entity
 @Getter
 @Setter
 @ToString
 public class FilmText {
+
     @Id
     @GeneratedValue
     @Column(name = "film_id")
     private Integer filmId;
+
     /**
      *
      */

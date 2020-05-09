@@ -26,7 +26,6 @@ public class Payment {
     @Column(name = "payment_id")
     private Integer paymentId;
 
-
     @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
     @OneToOne
     private Customer customer;

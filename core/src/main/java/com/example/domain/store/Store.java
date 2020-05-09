@@ -10,6 +10,9 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+/**
+ * @author yichuan
+ */
 @Entity
 @Getter
 @Setter
@@ -41,5 +44,4 @@ public class Store {
     @Column(name = "last_update")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private LocalDateTime lastUpdate;
-
 }

@@ -9,6 +9,10 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+/**
+ * @author yichuan
+ * 地址
+ */
 @Entity
 @Getter
 @Setter

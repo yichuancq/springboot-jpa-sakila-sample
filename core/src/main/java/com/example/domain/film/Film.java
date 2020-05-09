@@ -23,7 +23,12 @@ public class Film {
     @GeneratedValue
     @Column(name = "film_id")
     private Integer filmId;
-
+    /**
+     * 使用外键来识别电影内容
+     */
+    @JoinColumn(name = "film_id", referencedColumnName = "film_id")
+    @OneToOne
+    private FilmText filmText;
     /**
      * 标题
      */
@@ -85,7 +90,7 @@ public class Film {
     /**
      * 分配给电影评级。可以是 G， PG，PG - 13 ， R 或NC - 17
      */
-    @Enumerated(EnumType.STRING)
-    @Column(name = "rating")
-    private RatingEnum rating;
+    //@Enumerated(EnumType.STRING)
+//    @Column(name = "rating")
+//    private RatingEnum rating;
 }

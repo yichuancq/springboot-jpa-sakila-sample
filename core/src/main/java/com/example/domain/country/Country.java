@@ -12,14 +12,14 @@ import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 /**
- *
+ * @author yichuan
+ * 国家
  */
 @Entity
 @Getter
 @Setter
 @ToString
 public class Country {
-
     /**
      * ID
      */
@@ -33,7 +33,9 @@ public class Country {
      */
     @Column(name = "country")
     private String country;
-
+    /**
+     * 最后修改时间
+     */
     @Column(name = "last_update")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private LocalDateTime lastUpdate;

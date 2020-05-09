@@ -28,13 +28,13 @@ public class Rental {
     @Column(name = "rental_id")
     private Integer rentalId;
     /**
-     *
+     *该项目被租用
      */
     @JoinColumn(name = "inventory_id", referencedColumnName = "inventory_id")
     @OneToOne
     private Inventory inventory;
     /**
-     *
+     * 处理该项业务的工作人员
      */
     @JoinColumn(name = "staff_id", referencedColumnName = "staff_id")
     @OneToOne
