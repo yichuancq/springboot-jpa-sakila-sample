@@ -25,30 +25,29 @@ public class Payment {
     @GeneratedValue
     @Column(name = "payment_id")
     private Integer paymentId;
-
+    /***
+     *
+     */
     @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
     @OneToOne
     private Customer customer;
-
     /**
      *
      */
-    @JoinColumn(name = "manager_staff_id", referencedColumnName = "staff_id")
+    @JoinColumn(name = "staff_id", referencedColumnName = "staff_id")
     @OneToOne
     private Staff staff;
     /**
      *
      */
     @JoinColumn(name = "rental_id", referencedColumnName = "rental_id")
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private Rental rental;
-
     /**
      *
      */
     @Column(name = "amount")
     private BigDecimal amount;
-
     /**
      *
      */

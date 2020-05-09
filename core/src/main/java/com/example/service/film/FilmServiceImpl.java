@@ -59,7 +59,7 @@ public class FilmServiceImpl implements FilmService {
      */
     @Override
     public List<Film> queryByConditions(Film queryFilm) {
-        mySpecification(queryFilm);
+
         Specification<Film> specification = this.mySpecification(queryFilm);
         List<Film> filmList = filmRepository.findAll(specification);
         return filmList;
