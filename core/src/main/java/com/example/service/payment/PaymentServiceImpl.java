@@ -13,7 +13,6 @@ import org.springframework.util.StringUtils;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Predicate;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,41 +25,6 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Autowired
     private PaymentRepository paymentRepository;
-
-    /**
-     * @param queryPayment
-     * @return
-     */
-    private Specification<Payment> mySpecification(Payment queryPayment) {
-        Specification<Payment> specification = (Specification<Payment>) (root, query, cb) -> {
-            List<Predicate> predicateList = new ArrayList<Predicate>();
-
-            //表关联查询 Payment 为主表
-            Join<Payment, Staff> ruleJoin = root.join("staff", JoinType.LEFT);
-            /**
-             * title like
-             */
-            if (queryPayment != null && !StringUtils.isEmpty(queryPayment.getPaymentId())) {
-                Predicate predicate = cb.equal(root.get("paymentId"), queryPayment.getPaymentId());
-                predicateList.add(predicate);
-            }
-            // staff Id
-            if (queryPayment != null && !StringUtils.isEmpty(queryPayment.getStaff())
-                    && !StringUtils.isEmpty(queryPayment.getStaff().getStaffId())) {
-
-                Predicate predicate = cb.conjunction();
-                predicate = cb.and(predicate, cb.equal(root.get("staff").get("staffId"),
-                        queryPayment.getStaff().getStaffId()));
-                predicateList.add(predicate);
-            }
-            //添加group by
-            root.join("staff", JoinType.LEFT);
-
-            return cb.and(predicateList.toArray(new Predicate[predicateList.size()]));
-        };
-        return specification;
-
-    }
 
     @Override
     public List<Payment> queryByConditions(final Payment queryPayment) {
