@@ -29,6 +29,3 @@ public class Country {
     private LocalDateTime lastUpdate;
 
 }
-//'country_id', 'smallint(5) unsigned', 'NO', 'PRI', NULL, 'auto_increment'
-//        'country', 'varchar(50)', 'NO', '', NULL, ''
-//        'last_update', 'timestamp', 'NO', '', 'CURRENT_TIMESTAMP', 'on update CURRENT_TIMESTAMP'

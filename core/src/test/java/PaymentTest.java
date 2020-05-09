@@ -27,7 +27,6 @@ public class PaymentTest {
     @Test
     public void queryPage() {
         Payment payment = new Payment();
-//      payment.setPaymentId(1);
         Staff staff = new Staff();
         staff.setStaffId(1);
         staff.setFirstName("Mike");
@@ -54,7 +53,6 @@ public class PaymentTest {
     @Test
     public void testPayment() {
         Payment payment = new Payment();
-//      payment.setPaymentId(1);
         Staff staff = new Staff();
         staff.setStaffId(1);
         staff.setFirstName("Mike");
@@ -109,7 +107,7 @@ public class PaymentTest {
 //        left outer join city city2_ on address1_.city_id = city2_.city_id
 //        where
 //        customer0_.customer_id = ?
-/***/
+/*************/
 //    select
 //    distinct payment0_.payment_id as payment_1_12_,
 //    payment0_.amount as amount2_12_,

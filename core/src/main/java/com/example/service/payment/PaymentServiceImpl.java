@@ -78,6 +78,8 @@ public class PaymentServiceImpl implements PaymentService {
 
 
     /**
+     * Payment 关联对象复合查询
+     *
      * @param queryPayment
      * @param pageNumber
      * @param pageSize
